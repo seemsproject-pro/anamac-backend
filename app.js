@@ -20,13 +20,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const productRoutes = require('./routes/productRoutes');
 app.use('/api', productRoutes);
 
-// 2. Routes Checkout (Notif WA)
+// 2. Routes Checkout & Orders
 const orderRoutes = require('./routes/orderRoutes');
 app.use('/api/orders', orderRoutes);
 
-// 3. Nanti kita isi ini untuk Auth (Login/Register)
-// const authRoutes = require('./routes/authRoutes');
-// app.use('/api/auth', authRoutes);
+// 3. Routes Auth (Login/Register)
+const authRoutes = require('./routes/authRoutes');
+app.use('/api/auth', authRoutes);
 
 // --- TEST ROUTE ---
 app.get('/', (req, res) => {

@@ -20,16 +20,16 @@ exports.getProductById = (req, res) => {
 
 // 3. CREATE: Tambah Produk Baru
 exports.createProduct = (req, res) => {
-    const { name, category, price, description, image_url, stock } = req.body;
+    const { name, category, price, description, image, stock } = req.body;
 
     // Validasi dasar
     if (!name || !price) {
         return res.status(400).json({ status: 'error', message: 'Field name dan price wajib diisi' });
     }
 
-    const sql = 'INSERT INTO products (name, category, price, description, image_url, stock) VALUES (?, ?, ?, ?, ?, ?)';
+    const sql = 'INSERT INTO products (name, category, price, description, image, stock) VALUES (?, ?, ?, ?, ?, ?)';
     
-    db.query(sql, [name, category, price, description, image_url, stock], (err, results) => {
+    db.query(sql, [name, category, price, description, image, stock || 10], (err, results) => {
         if (err) {
             console.error("SQL Error:", err);
             return res.status(500).json({ status: 'error', message: err.message });
@@ -41,10 +41,10 @@ exports.createProduct = (req, res) => {
 // 4. UPDATE: Edit Produk
 exports.updateProduct = (req, res) => {
     const { id } = req.params;
-    const { name, category, price, description, image_url, stock } = req.body;
-    const sql = 'UPDATE products SET name=?, category=?, price=?, description=?, image_url=?, stock=? WHERE id=?';
+    const { name, category, price, description, image, stock } = req.body;
+    const sql = 'UPDATE products SET name=?, category=?, price=?, description=?, image=?, stock=? WHERE id=?';
 
-    db.query(sql, [name, category, price, description, image_url, stock, id], (err, results) => {
+    db.query(sql, [name, category, price, description, image, stock || 10, id], (err, results) => {
         if (err) return res.status(500).json({ status: 'error', message: err.message });
         res.json({ status: 'success', message: 'Produk berhasil diupdate' });
     });

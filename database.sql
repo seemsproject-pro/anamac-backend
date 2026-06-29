@@ -1,8 +1,6 @@
 -- Script Database UAS - AnaMac Komputer
 
-DROP DATABASE IF EXISTS anamac_db;
-CREATE DATABASE anamac_db;
-USE anamac_db;
+-- (Railway MySQL will use its own default database)
 
 -- 1. Tabel Users
 CREATE TABLE IF NOT EXISTS users (

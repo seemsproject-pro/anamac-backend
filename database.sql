@@ -39,13 +39,13 @@ CREATE TABLE IF NOT EXISTS orders (
 
 -- Seeding Data Produk Default (Sesuai products.json UTS)
 INSERT INTO products (id, name, price, category, image, description, stock) VALUES
-(1, 'Tablet Xiaomi + Stylus & Cover', 4500000.00, 'Tablet', 'https://placehold.co/400x300/e2e8f0/1e293b?text=Xiaomi+Tablet', 'Tablet performa tinggi, lengkap dengan stylus.', 10),
-(2, 'Laptop Gaming RTX Series', 15500000.00, 'Laptop', 'https://placehold.co/400x300/e2e8f0/1e293b?text=Gaming+Laptop', 'Laptop tangguh memberikan frame rate maksimal.', 8),
-(3, 'Smart TV 4K 50-Inch', 5200000.00, 'Televisi', 'https://placehold.co/400x300/e2e8f0/1e293b?text=Smart+TV', 'TV pintar resolusi 4K untuk pengalaman sinematik.', 5),
-(4, 'Headphone Wireless ANC', 1200000.00, 'Aksesoris', 'https://placehold.co/400x300/e2e8f0/1e293b?text=Headphone', 'Nikmati musik tanpa gangguan suara bising dari luar.', 15),
-(5, 'MacBook Air M2', 18000000.00, 'Laptop', 'https://placehold.co/400x300/e2e8f0/1e293b?text=MacBook+Air', 'Laptop ultra tipis dengan performa chip M2 yang efisien.', 7),
-(6, 'iPad Pro 11-Inch', 14500000.00, 'Tablet', 'https://placehold.co/400x300/e2e8f0/1e293b?text=iPad+Pro', 'Kanvas digital terbaik untuk para profesional kreatif.', 6),
-(7, 'Monitor Ultrawide 34-Inch', 6500000.00, 'Aksesoris', 'https://placehold.co/400x300/e2e8f0/1e293b?text=Ultrawide+Monitor', 'Ruang kerja super luas untuk kebutuhan multitasking.', 12)
+(1, 'Tablet Xiaomi + Stylus & Cover', 4500000.00, 'Tablet', 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?q=80&w=400&auto=format&fit=crop', 'Tablet performa tinggi, lengkap dengan stylus.', 10),
+(2, 'Laptop Gaming RTX Series', 15500000.00, 'Laptop', 'https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=400&auto=format&fit=crop', 'Laptop tangguh memberikan frame rate maksimal.', 8),
+(3, 'Smart TV 4K 50-Inch', 5200000.00, 'Televisi', 'https://images.unsplash.com/photo-1593305841991-05c297ba4575?q=80&w=400&auto=format&fit=crop', 'TV pintar resolusi 4K untuk pengalaman sinematik.', 5),
+(4, 'Headphone Wireless ANC', 1200000.00, 'Aksesoris', 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=400&auto=format&fit=crop', 'Nikmati musik tanpa gangguan suara bising dari luar.', 15),
+(5, 'MacBook Air M2', 1800000.00, 'Laptop', 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=400&auto=format&fit=crop', 'Laptop ultra tipis dengan performa chip M2 yang efisien.', 7),
+(6, 'iPad Pro 11-Inch', 14500000.00, 'Tablet', 'https://images.unsplash.com/photo-1585790050230-5dd28404ccb9?q=80&w=400&auto=format&fit=crop', 'Kanvas digital terbaik untuk para profesional kreatif.', 6),
+(7, 'Monitor Ultrawide 34-Inch', 6500000.00, 'Aksesoris', 'https://images.unsplash.com/photo-1527443224154-c4a3d114dbce?q=80&w=400&auto=format&fit=crop', 'Ruang kerja super luas untuk kebutuhan multitasking.', 12)
 ON DUPLICATE KEY UPDATE 
     name=VALUES(name), 
     price=VALUES(price), 
